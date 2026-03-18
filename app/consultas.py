@@ -10,19 +10,62 @@ from db import get_connection
 # ---------------------------------------------------------------
 
 def listar_obras_com_contratos():
-    # TODO: Abner implementa aqui
-    print("  [TODO] listar_obras_com_contratos não implementado ainda.")
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    query = """
+    SELECT o.nome, c.numero_contrato, c.valor
+    FROM obra o
+    JOIN contrato c ON o.id_obra = c.id_obra
+    """
+    cursor.execute(query)
+    resultados = cursor.fetchall()
+
+    print("\n=== Obras com Contratados ===")
+    for r in resultados:
+        print(r)
+    conn.close()
+    
 
 
 def buscar_obra_por_nome():
-    # TODO: Abner implementa aqui (parametrizável — pede nome pro usuário)
-    print("  [TODO] buscar_obra_por_nome não implementado ainda.")
+    nome = input("Digite o nome da obra: ")
+    
+    conn = get_connection
+    cursor = conn.cursor()
 
+    query = """
+    SELECT * FROM obra
+    WHERE nome LIKE %s
+    """
+    cursor.execute(query, (f"%{nome}%",))
+    resultados = cursor.fetchall()
+
+    print("\n=== Resultado da Busca ===")
+    for r in resultados:
+        print(r)
+
+    conn.close()
 
 def listar_etapas_por_obra():
-    # TODO: Abner implementa aqui (parametrizável — pede id_obra pro usuário)
-    print("  [TODO] listar_etapas_por_obra não implementado ainda.")
+    id_obra = input("Digite o ID da Obra: ")
 
+    conn = get_connection
+    cursor = conn.cursor()
+
+    query = """
+    SELECT id_etapa, nome, status
+    FROM etapa
+    WHERE id_obra = %s
+    """
+    cursor.execute(query, (id_obra,))
+    resultados = cursor.fetchall()
+
+    print("\n=== Etapas da Obra ===")
+    for r in resultados:
+        print(r)
+
+    conn.close()
 
 # ---------------------------------------------------------------
 # Consultas da Grazy
