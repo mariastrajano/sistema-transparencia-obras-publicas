@@ -9,8 +9,11 @@
 import os
 import psycopg2
 from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv()
+# Carrega o .env da raiz do projeto (não da pasta app)
+env_path = Path(__file__).parent.parent / ".env"
+load_dotenv(env_path)
 
 
 def get_connection():
@@ -24,7 +27,8 @@ def get_connection():
             port=os.getenv("DB_PORT", "5432"),
             dbname=os.getenv("DB_NAME", "obras_publicas"),
             user=os.getenv("DB_USER", "postgres"),
-            password=os.getenv("DB_PASSWORD", "")
+            password=os.getenv("DB_PASSWORD", ""),
+            client_encoding="UTF-8"
         )
         return conn
     except psycopg2.OperationalError as e:

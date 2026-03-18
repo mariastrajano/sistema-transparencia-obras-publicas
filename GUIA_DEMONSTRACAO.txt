@@ -1,0 +1,287 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║           GUIA PASSO A PASSO PARA APRESENTAÇÃO DO SISTEMA                 ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+📍 PASSO 1: PREPARAR O AMBIENTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abra Windows Terminal (não PowerShell)
+   - Clique em Windows Terminal na barra de tarefas
+   - OU pressione Win+Shift+T
+
+2. Navegue até a pasta do projeto:
+   cd c:\Users\matheus\sistema-transparencia-obras-publicas
+
+3. Verifique os arquivos principais:
+   dir  (ou ls para listar)
+   
+   Você deve ver:
+   - app/              (código da aplicação)
+   - sql/              (schema e seed)
+   - .env              (credenciais do banco)
+   - SISTEMA_PRONTO.txt
+
+
+📍 PASSO 2: MOSTRAR A ESTRUTURA DO CÓDIGO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abra o Visual Studio Code (ou o editor de sua preferência):
+   code .
+
+2. Mostre a estrutura na barra lateral:
+   📁 app/
+      ├── main.py           (menu principal)
+      ├── db.py             (conexão com banco)
+      ├── consultas.py      (6 tipos de consultas)
+      ├── insercoes.py      (inserir obras, etapas, vincular admin)
+      └── atualizacoes.py   (atualizar status e contratos)
+   
+   📁 sql/
+      ├── schema.sql        (estrutura do banco - 11 tabelas)
+      └── seed_novo.sql     (dados de demonstração)
+   
+   .env                      (credenciais do PostgreSQL)
+
+3. Explicar brevemente cada arquivo enquanto mostra no VS Code
+
+
+📍 PASSO 3: MOSTRAR O SCHEMA DO BANCO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abra o arquivo sql/schema.sql no VS Code
+
+2. Mostre as tabelas principais (role down para ver):
+   - ORGAO_CONTROLE      (órgãos responsáveis)
+   - USUARIO             (usuários do sistema)
+   - EMPRESA_CONTRATADA  (empresas que executam obras)
+   - OBRA                (as obras públicas)
+   - ETAPA               (fases de cada obra)
+   - CONTRATO            (contratos com empresas)
+   - FISCALIZACAO        (visitas de fiscalização)
+   
+3. Destaque os relacionamentos (FOREIGN KEYS)
+
+4. Comente sobre os CHECK CONSTRAINTS:
+   - Status de etapa: pendente, em_andamento, concluida, atrasada
+   - Resultado de fiscalização: aprovado, reprovado, pendente, em_analise
+
+
+📍 PASSO 4: LIMPAR O BANCO E RECARREGAR DO ZERO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. No terminal, execute:
+   python load_new_seed.py
+
+   Você verá:
+   ✓ Limpando dados existentes...
+   ✓ Recriando schema...
+   ✓ Carregando schema.sql...
+   ✓ Lendo seed_novo.sql...
+   ✓ Carregando dados...
+   ✓ Seed carregado com sucesso!
+   ✓ 87 registros carregados (6 obras, 25 etapas, 21 fiscalizações, etc)
+
+2. Mostre o arquivo seed_novo.sql no VS Code:
+   - Mostrar dados de exemplo (obras com acentos: Construção, Pavimentação)
+   - Explicar que tem 87 registros sendo inseridos
+
+
+📍 PASSO 5: EXECUTAR A APLICAÇÃO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. No terminal, execute:
+   python main.py
+
+2. Você verá o menu principal:
+   ================================================
+   Sistema de Transparência de Obras Públicas
+   ================================================
+   
+   1. Inserir dados
+   2. Consultar dados
+   3. Atualizar dados
+   0. Sair
+
+
+📍 PASSO 6: DEMONSTRAR CONSULTAS (Opção 2)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Pressione: 2
+
+Menu de consultas aparecerá:
+  1. Listar todas as obras
+  2. Listar obras com contratos
+  3. Buscar obra por nome
+  4. Listar etapas de uma obra
+  5. Fiscalizações por fiscal e período
+  6. Obras por status de etapa e bairro
+  7. Empresas contratadas com valor total
+  0. Voltar
+
+
+DEMONSTRAÇÃO 1 - Listar todas as obras
+────────────────────────────────────────
+Pressione: 1
+
+Resultado esperado:
+  ID: 1 - Reforma da Escola Municipal Sol Nascente
+  ID: 2 - Construção da UBS Bairro Esperança (com acento ç)
+  ID: 3 - Pavimentação da Avenida do Contorno (com acento ã)
+  ID: 4 - Construção de Praça Pública Vila Verde
+  ID: 5 - Ampliação do Mercado Público Municipal
+  ID: 6 - Reforma do Ginásio Poliesportivo Municipal
+
+✓ Mostre que os acentos em português estão funcionando
+
+
+DEMONSTRAÇÃO 2 - Buscar obra por nome
+──────────────────────────────────────
+Pressione: 2 → 3 (voltar e entrar em novo menu)
+
+Opção: 3
+
+Digite: "Construção"
+
+Resultado: Mostrará as 2 obras com "Construção" no nome
+
+
+DEMONSTRAÇÃO 3 - Listar etapas de uma obra
+────────────────────────────────────────────
+Opção: 4
+
+Digite: 1 (para obra ID 1)
+
+Resultado: Mostrará as 4 etapas da Reforma da Escola:
+  - Demolição inicial (concluída)
+  - Reforço estrutural (concluída)
+  - Instalações elétricas (em andamento)
+  - Acabamento e acessibilidade (pendente)
+
+
+DEMONSTRAÇÃO 4 - Empresas com valor contratado
+─────────────────────────────────────────────────
+Opção: 7
+
+Resultado: Mostrará:
+  - Construtora Horizonte: R$ 980.000,00
+  - Edifica Brasil: R$ 2.850.000,00
+  - Pavitec Obras: R$ 3.190.000,00
+  - etc...
+
+
+📍 PASSO 7: DEMONSTRAR INSERÇÃO (Opção 1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Pressione: 0 (para voltar ao menu principal)
+Depois: 1 (Inserir dados)
+
+Menu de inserção:
+  1. Nova obra
+  2. Nova etapa de obra
+  3. Vincular administrador a obra
+
+
+DEMONSTRAÇÃO 5 - Inserir uma nova obra
+────────────────────────────────────────
+Pressione: 1
+
+Preencha os dados:
+  Nome da obra: Reforma da Biblioteca Pública
+  Descrição: Modernização e expansão da biblioteca
+  Data de início (YYYY-MM-DD): 2026-03-20
+  Data fim prevista (YYYY-MM-DD ou vazio): 2026-12-31
+  Número do endereço: 500
+  Rua: Rua da Cultura
+  Bairro: Centro
+
+Resultado: ✅ Obra inserida com sucesso!
+
+Volte para consultas (Opção 2 → 1) e liste todas as obras para mostrar
+a nova obra aparecendo na lista.
+
+
+📍 PASSO 8: DEMONSTRAR ATUALIZAÇÃO (Opção 3)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Pressione: 0 (para voltar ao menu principal)
+Depois: 3 (Atualizar dados)
+
+Menu de atualização:
+  1. Atualizar status de uma etapa
+  2. Atualizar dados de um contrato
+
+
+DEMONSTRAÇÃO 6 - Atualizar status de etapa
+─────────────────────────────────────────────
+Pressione: 1
+
+ID da etapa: 4 (Acabamento da Escola - que está pendente)
+Novo status: em_andamento
+
+Resultado: ✅ Status atualizado com sucesso!
+
+
+DEMONSTRAÇÃO 7 - Atualizar valor de contrato
+──────────────────────────────────────────────
+Pressione: 2
+
+ID do contrato: 1
+Novo valor do contrato: 1050000
+
+Resultado: ✅ Contrato atualizado com sucesso!
+
+
+📍 PASSO 9: FINALIZAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Pressione: 0 (para voltar ao menu principal)
+Depois: 0 (para sair)
+
+Resultado: "Até mais!"
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 RESUMO DO FLUXO DA DEMONSTRAÇÃO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ✓ Terminal: Mostra estrutura do projeto
+2. ✓ VS Code: Abre schema.sql e seed_novo.sql
+3. ✓ Terminal: Executa load_new_seed.py (popula banco)
+4. ✓ Terminal: Executa main.py (inicia aplicação)
+5. ✓ Menu: Opção 2 → Consultar dados (6 tipos diferentes)
+6. ✓ Menu: Opção 1 → Inserir dados (nova obra)
+7. ✓ Menu: Opção 3 → Atualizar dados (status, contrato)
+8. ✓ Menu: Opção 0 → Sair
+
+
+⏱️ TEMPO ESTIMADO: 15-20 MINUTOS
+
+
+⚠️ DICAS IMPORTANTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Use Windows Terminal para melhor suporte a UTF-8 (acentos)
+
+2. Se algo der errado:
+   - Ctrl+C para parar a aplicação
+   - Repita o passo 4: python load_new_seed.py
+   - Execute novamente: python main.py
+
+3. Se o PostgreSQL não conectar:
+   - Abra Services (services.msc)
+   - Procure por "PostgreSQL-x64-18"
+   - Clique em "Start"
+
+4. Os dados já estão preparados no seed_novo.sql
+   - Não precisa criar dados manualmente
+   - Só use a demonstração de INSERÇÃO para mostrar o recurso
+
+5. Todos os acentos em português funcionam corretamente:
+   ✓ Construção ✓ Pavimentação ✓ Ampliação ✓ Esperança ✓ Ginásio
+
+
+═══════════════════════════════════════════════════════════════════════════════

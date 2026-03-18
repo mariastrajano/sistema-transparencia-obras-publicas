@@ -6,6 +6,7 @@ import sys
 from db import get_connection
 from insercoes import inserir_obra, inserir_etapa, vincular_admin_obra
 from consultas import (
+    listar_todas_obras,
     listar_obras_com_contratos,
     buscar_obra_por_nome,
     listar_etapas_por_obra,
@@ -78,24 +79,26 @@ def menu_consulta():
         separador()
         print("  Consultas")
         separador()
-        print("  1. Listar todas as obras com contratos")
-        print("  2. Buscar obra por nome")
-        print("  3. Listar etapas de uma obra")
-        print("  4. Fiscalizações por fiscal e período")
-        print("  5. Obras por status de etapa e bairro")
-        print("  6. Empresas contratadas com valor total")
+        print("  1. Listar todas as obras")
+        print("  2. Listar obras com contratos")
+        print("  3. Buscar obra por nome")
+        print("  4. Listar etapas de uma obra")
+        print("  5. Fiscalizações por fiscal e período")
+        print("  6. Obras por status de etapa e bairro")
+        print("  7. Empresas contratadas com valor total")
         print("  0. Voltar")
         print()
 
         opcao = input("  Opção: ").strip()
 
         opcoes = {
-            "1": listar_obras_com_contratos,
-            "2": buscar_obra_por_nome,
-            "3": listar_etapas_por_obra,
-            "4": fiscalizacoes_por_fiscal_e_periodo,
-            "5": obras_por_status_e_bairro,
-            "6": empresas_com_valor_total,
+            "1": listar_todas_obras,
+            "2": listar_obras_com_contratos,
+            "3": buscar_obra_por_nome,
+            "4": listar_etapas_por_obra,
+            "5": fiscalizacoes_por_fiscal_e_periodo,
+            "6": obras_por_status_e_bairro,
+            "7": empresas_com_valor_total,
         }
 
         if opcao in opcoes:

@@ -41,7 +41,7 @@ def atualizar_contrato():
 
         query = """
         UPDATE contrato
-        SET valor = %s
+        SET valor_total = %s
         WHERE id_contrato = %s
         """
 

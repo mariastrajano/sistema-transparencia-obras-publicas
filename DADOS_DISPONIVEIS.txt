@@ -1,0 +1,493 @@
+SISTEMA DE TRANSPARÊNCIA DE OBRAS PÚBLICAS
+Dados Disponíveis para Consulta e Testes
+Data de Carregamento: 18/03/2026
+
+================================================================================
+
+OBRAS PÚBLICAS
+
+--- Obra 1 ---
+ID: 1
+Nome: Reforma da Escola Municipal Sol Nascente
+Descrição: Reforma de salas, cobertura, instalações elétricas e adaptação de acessibilidade.
+Endereço: Rua das Flores, 120, Centro
+Data Início: 2025-01-10
+Data Fim Prevista: 2025-12-15
+Valor do Contrato: R$ 980.000,00
+Empresa Responsável: Construtora Horizonte LTDA
+
+--- Obra 2 ---
+ID: 2
+Nome: Construção da UBS Bairro Esperança
+Descrição: Construção de unidade básica de saúde com consultórios, farmácia e recepção.
+Endereço: Avenida Central, 450, Esperança
+Data Início: 2025-02-03
+Data Fim Prevista: 2026-04-30
+Valor do Contrato: R$ 2.850.000,00
+Empresa Responsável: Edifica Brasil Serviços de Engenharia
+
+--- Obra 3 ---
+ID: 3
+Nome: Pavimentação da Avenida do Contorno
+Descrição: Execução de drenagem e pavimentação asfáltica em corredor urbano.
+Endereço: Avenida do Contorno, s/n, Industrial
+Data Início: 2024-08-20
+Data Fim Prevista: 2025-09-30
+Valor do Contrato: R$ 3.190.000,00
+Empresa Responsável: Pavitec Obras Públicas LTDA
+
+--- Obra 4 ---
+ID: 4
+Nome: Construção de Praça Pública Vila Verde
+Descrição: Praça com iluminação, paisagismo, playground e academia ao ar livre.
+Endereço: Rua Projetada A, 85, Vila Verde
+Data Início: 2025-03-12
+Data Fim Prevista: 2025-10-25
+Valor do Contrato: R$ 740.000,00
+Empresa Responsável: Nova Era Infraestrutura LTDA
+
+--- Obra 5 ---
+ID: 5
+Nome: Ampliação do Mercado Público Municipal
+Descrição: Ampliação dos boxes, cobertura metálica e modernização elétrica.
+Endereço: Rua do Comércio, 300, Centro
+Data Início: 2024-11-01
+Data Fim Prevista: 2025-11-20
+Valor do Contrato: R$ 1.560.000,00
+Empresa Responsável: Construmax Projetos e Execuções LTDA
+
+--- Obra 6 ---
+ID: 6
+Nome: Reforma do Ginásio Poliesportivo Municipal
+Descrição: Recuperação estrutural, vestiários, cobertura e arquibancadas.
+Endereço: Avenida Esportiva, 77, Boa Vista
+Data Início: 2025-04-15
+Data Fim Prevista: 2026-01-30
+Valor do Contrato: R$ 2.125.000,00
+Empresa Responsável: Via Urbana Engenharia S/A
+
+================================================================================
+
+USUÁRIOS DO SISTEMA
+
+--- Administradores Públicos ---
+
+Usuário 1
+CPF: 111.111.111-11
+Nome: Ana Paula Ribeiro
+Email: ana.ribeiro@orgao.gov.br
+Tipo: Administrador
+Órgão: Secretaria Municipal de Infraestrutura
+
+Usuário 2
+CPF: 222.222.222-22
+Nome: Carlos Henrique Lima
+Email: carlos.lima@orgao.gov.br
+Tipo: Administrador
+Órgão: Secretaria de Obras Públicas
+
+Usuário 3
+CPF: 333.333.333-33
+Nome: Fernanda Rocha
+Email: fernanda.rocha@orgao.gov.br
+Tipo: Administrador
+Órgão: Secretaria Municipal de Infraestrutura
+
+Usuário 8
+CPF: 888.888.888-88
+Nome: Eduardo Nunes
+Email: eduardo.nunes@orgao.gov.br
+Tipo: Administrador
+Órgão: Secretaria de Obras Públicas
+
+--- Fiscais de Obra ---
+
+Usuário 4
+CPF: 444.444.444-44
+Nome: Marcos Vinícius Alves
+Email: marcos.alves@controle.gov.br
+Tipo: Fiscal
+Órgão: Controladoria Geral do Município
+
+Usuário 5
+CPF: 555.555.555-55
+Nome: Juliana Costa
+Email: juliana.costa@controle.gov.br
+Tipo: Fiscal
+Órgão: Tribunal de Contas do Estado
+
+Usuário 6
+CPF: 666.666.666-66
+Nome: Rafael Mendes
+Email: rafael.mendes@controle.gov.br
+Tipo: Fiscal
+Órgão: Controladoria Geral da União - Regional
+
+Usuário 7
+CPF: 777.777.777-77
+Nome: Patricia Gomes
+Email: patricia.gomes@controle.gov.br
+Tipo: Fiscal
+Órgão: Controladoria Geral do Município
+
+================================================================================
+
+EMPRESAS CONTRATADAS
+
+--- Empresa 1 ---
+CNPJ: 60.666.666/0001-06
+Nome: Construtora Horizonte LTDA
+Contratos Ativos: 1
+Valor Total Contratado: R$ 980.000,00
+
+--- Empresa 2 ---
+CNPJ: 70.777.777/0001-07
+Nome: Via Urbana Engenharia S/A
+Contratos Ativos: 1
+Valor Total Contratado: R$ 2.125.000,00
+
+--- Empresa 3 ---
+CNPJ: 80.888.888/0001-08
+Nome: Nova Era Infraestrutura LTDA
+Contratos Ativos: 1
+Valor Total Contratado: R$ 740.000,00
+
+--- Empresa 4 ---
+CNPJ: 90.999.999/0001-09
+Nome: Pavitec Obras Públicas LTDA
+Contratos Ativos: 1
+Valor Total Contratado: R$ 3.190.000,00
+
+--- Empresa 5 ---
+CNPJ: 11.000.000/0001-10
+Nome: Edifica Brasil Serviços de Engenharia
+Contratos Ativos: 1
+Valor Total Contratado: R$ 2.850.000,00
+
+--- Empresa 6 ---
+CNPJ: 22.123.123/0001-11
+Nome: Construmax Projetos e Execuções LTDA
+Contratos Ativos: 1
+Valor Total Contratado: R$ 1.560.000,00
+
+================================================================================
+
+ETAPAS DE OBRAS
+
+--- Obra 1: Reforma da Escola Municipal Sol Nascente ---
+
+Etapa 1 (1/4)
+Nome: Demolição inicial
+Status: Concluída
+Descrição: Remoção de estruturas comprometidas e limpeza da área.
+Data Início Prevista: 2025-01-15
+Data Fim Prevista: 2025-02-05
+
+Etapa 2 (2/4)
+Nome: Reforço estrutural
+Status: Concluída
+Descrição: Reforço de pilares, vigas e cobertura.
+Data Início Prevista: 2025-02-06
+Data Fim Prevista: 2025-04-20
+
+Etapa 3 (3/4)
+Nome: Instalações elétricas
+Status: Em andamento
+Descrição: Substituição da rede elétrica e quadro geral.
+Data Início Prevista: 2025-04-25
+Data Fim Prevista: 2025-07-30
+
+Etapa 4 (4/4)
+Nome: Acabamento e acessibilidade
+Status: Pendente
+Descrição: Pisos, pintura, rampas e corrimãos.
+Data Início Prevista: 2025-08-01
+Data Fim Prevista: 2025-12-05
+
+--- Obra 2: Construção da UBS Bairro Esperança ---
+
+Etapa 5 (1/4)
+Nome: Fundação
+Status: Concluída
+Descrição: Blocos, baldrames e sapatas da unidade.
+Data Início Prevista: 2025-02-10
+Data Fim Prevista: 2025-04-15
+
+Etapa 6 (2/4)
+Nome: Estrutura
+Status: Em andamento
+Descrição: Pilares, vigas, lajes e estrutura principal.
+Data Início Prevista: 2025-04-20
+Data Fim Prevista: 2025-10-15
+
+Etapa 7 (3/4)
+Nome: Alvenaria
+Status: Pendente
+Descrição: Fechamento de paredes e divisórias internas.
+Data Início Prevista: 2025-10-20
+Data Fim Prevista: 2025-12-20
+
+Etapa 8 (4/4)
+Nome: Instalações e acabamento
+Status: Pendente
+Descrição: Instalações prediais, revestimentos e pintura.
+Data Início Prevista: 2026-01-05
+Data Fim Prevista: 2026-04-20
+
+--- Obra 3: Pavimentação da Avenida do Contorno ---
+
+Etapa 9 (1/5)
+Nome: Terraplenagem
+Status: Concluída
+Descrição: Regularização do solo e conformação da pista.
+Data Início Prevista: 2024-08-25
+Data Fim Prevista: 2024-10-10
+
+Etapa 10 (2/5)
+Nome: Drenagem pluvial
+Status: Concluída
+Descrição: Execução de galerias, bocas de lobo e saídas.
+Data Início Prevista: 2024-10-15
+Data Fim Prevista: 2025-01-30
+
+Etapa 11 (3/5)
+Nome: Base e sub-base
+Status: Concluída
+Descrição: Preparação das camadas para pavimentação.
+Data Início Prevista: 2025-02-01
+Data Fim Prevista: 2025-04-15
+
+Etapa 12 (4/5)
+Nome: Pavimentação asfáltica
+Status: Atrasada
+Descrição: Aplicação de binder e capa asfáltica.
+Data Início Prevista: 2025-04-20
+Data Fim Prevista: 2025-07-25
+
+Etapa 13 (5/5)
+Nome: Sinalização horizontal e vertical
+Status: Pendente
+Descrição: Pintura de faixas, placas e tachões.
+Data Início Prevista: 2025-08-01
+Data Fim Prevista: 2025-09-20
+
+--- Obra 4: Construção de Praça Pública Vila Verde ---
+
+Etapa 14 (1/4)
+Nome: Limpeza do terreno
+Status: Concluída
+Descrição: Retirada de entulho e nivelamento inicial.
+Data Início Prevista: 2025-03-15
+Data Fim Prevista: 2025-03-28
+
+Etapa 15 (2/4)
+Nome: Urbanização e piso
+Status: Em andamento
+Descrição: Execução de caminhos, meio-fio e piso intertravado.
+Data Início Prevista: 2025-04-01
+Data Fim Prevista: 2025-07-20
+
+Etapa 16 (3/4)
+Nome: Paisagismo
+Status: Pendente
+Descrição: Plantio de grama, arbustos e árvores ornamentais.
+Data Início Prevista: 2025-07-21
+Data Fim Prevista: 2025-08-30
+
+Etapa 17 (4/4)
+Nome: Instalação de equipamentos
+Status: Pendente
+Descrição: Playground, academia e bancos.
+Data Início Prevista: 2025-09-01
+Data Fim Prevista: 2025-10-10
+
+--- Obra 5: Ampliação do Mercado Público Municipal ---
+
+Etapa 18 (1/4)
+Nome: Demolições internas
+Status: Concluída
+Descrição: Adequações para ampliação dos boxes.
+Data Início Prevista: 2024-11-05
+Data Fim Prevista: 2024-12-10
+
+Etapa 19 (2/4)
+Nome: Estrutura metálica
+Status: Concluída
+Descrição: Montagem da nova cobertura metálica.
+Data Início Prevista: 2024-12-15
+Data Fim Prevista: 2025-03-20
+
+Etapa 20 (3/4)
+Nome: Instalações elétricas e hidráulicas
+Status: Em andamento
+Descrição: Infraestrutura dos novos boxes e corredores.
+Data Início Prevista: 2025-03-25
+Data Fim Prevista: 2025-08-20
+
+Etapa 21 (4/4)
+Nome: Acabamento final
+Status: Pendente
+Descrição: Revestimentos, pintura e ajustes finais.
+Data Início Prevista: 2025-08-25
+Data Fim Prevista: 2025-11-10
+
+--- Obra 6: Reforma do Ginásio Poliesportivo Municipal ---
+
+Etapa 22 (1/4)
+Nome: Recuperação estrutural
+Status: Em andamento
+Descrição: Reparo em vigas, pilares e arquibancadas.
+Data Início Prevista: 2025-04-20
+Data Fim Prevista: 2025-08-30
+
+Etapa 23 (2/4)
+Nome: Cobertura
+Status: Pendente
+Descrição: Troca de telhas e estrutura de cobertura.
+Data Início Prevista: 2025-09-01
+Data Fim Prevista: 2025-10-30
+
+Etapa 24 (3/4)
+Nome: Vestiários e banheiros
+Status: Pendente
+Descrição: Reforma completa de áreas de apoio.
+Data Início Prevista: 2025-11-01
+Data Fim Prevista: 2025-12-20
+
+Etapa 25 (4/4)
+Nome: Pintura e acabamento
+Status: Pendente
+Descrição: Pintura interna, externa e sinalização esportiva.
+Data Início Prevista: 2025-12-21
+Data Fim Prevista: 2026-01-25
+
+================================================================================
+
+FISCALIZAÇÕES REGISTRADAS
+
+Total de Fiscalizações: 21
+
+Data 2024-09-20 - Etapa 9 (Terraplenagem) - Fiscal: Marcos Vinícius Alves
+Resultado: Aprovado
+Observação: Terraplenagem avançando conforme cronograma.
+
+Data 2024-11-25 - Etapa 18 (Demolições internas) - Fiscal: Marcos Vinícius Alves
+Resultado: Aprovado
+Observação: Demolições internas concluídas sem intercorrências.
+
+Data 2025-01-20 - Etapa 10 (Drenagem pluvial) - Fiscal: Juliana Costa
+Resultado: Aprovado
+Observação: Sistema de drenagem implantado adequadamente.
+
+Data 2025-01-28 - Etapa 1 (Demolição inicial) - Fiscal: Marcos Vinícius Alves
+Resultado: Aprovado
+Observação: Demolição em andamento conforme planejamento. Área isolada corretamente.
+
+Data 2025-02-06 - Etapa 1 (Demolição inicial) - Fiscal: Juliana Costa
+Resultado: Aprovado
+Observação: Etapa concluída com remoção completa de resíduos.
+
+Data 2025-02-18 - Etapa 19 (Estrutura metálica) - Fiscal: Juliana Costa
+Resultado: Aprovado
+Observação: Estrutura metálica montada com alinhamento adequado.
+
+Data 2025-03-15 - Etapa 5 (Fundação) - Fiscal: Juliana Costa
+Resultado: Aprovado
+Observação: Fundação executada dentro das especificações do projeto.
+
+Data 2025-03-18 - Etapa 2 (Reforço estrutural) - Fiscal: Rafael Mendes
+Resultado: Aprovado
+Observação: Reforço estrutural com bom progresso físico. Sem anomalias visíveis.
+
+Data 2025-03-26 - Etapa 14 (Limpeza do terreno) - Fiscal: Juliana Costa
+Resultado: Aprovado
+Observação: Terreno liberado e apto para início da urbanização.
+
+Data 2025-03-28 - Etapa 11 (Base e sub-base) - Fiscal: Rafael Mendes
+Resultado: Aprovado
+Observação: Base e sub-base concluídas com compactação satisfatória.
+
+Data 2025-05-30 - Etapa 15 (Urbanização e piso) - Fiscal: Rafael Mendes
+Resultado: Aprovado
+Observação: Piso intertravado executado parcialmente com boa qualidade.
+
+Data 2025-06-02 - Etapa 22 (Recuperação estrutural) - Fiscal: Patricia Gomes
+Resultado: Aprovado
+Observação: Recuperação estrutural com avanço compatível com o cronograma.
+
+Data 2025-06-08 - Etapa 20 (Instalações elétricas e hidráulicas) - Fiscal: Rafael Mendes
+Resultado: Em análise
+Observação: Instalações em andamento. Falta atualização de diário de obra.
+
+Data 2025-06-10 - Etapa 3 (Instalações elétricas) - Fiscal: Patricia Gomes
+Resultado: Em análise
+Observação: Instalações elétricas em execução. Encontrado trecho sem eletroduto adequado.
+
+Data 2025-06-18 - Etapa 12 (Pavimentação asfáltica) - Fiscal: Patricia Gomes
+Resultado: Reprovado
+Observação: Pavimentação com execução parcial e trechos com espessura abaixo do esperado.
+
+Data 2025-06-25 - Etapa 6 (Estrutura) - Fiscal: Rafael Mendes
+Resultado: Aprovado
+Observação: Estrutura vertical iniciada. Concreto e ferragem em conformidade.
+
+Data 2025-07-05 - Etapa 3 (Instalações elétricas) - Fiscal: Marcos Vinícius Alves
+Resultado: Pendente
+Observação: Correções iniciadas, porém ainda pendente regularização completa.
+
+Data 2025-07-12 - Etapa 15 (Urbanização e piso) - Fiscal: Patricia Gomes
+Resultado: Pendente
+Observação: Identificados pontos de recalque em trecho do passeio.
+
+Data 2025-07-22 - Etapa 12 (Pavimentação asfáltica) - Fiscal: Marcos Vinícius Alves
+Resultado: Em análise
+Observação: Persistem atrasos na frente de serviço. Empresa apresentou justificativa climática.
+
+Data 2025-08-30 - Etapa 6 (Estrutura) - Fiscal: Patricia Gomes
+Resultado: Pendente
+Observação: Foram observadas falhas de organização do canteiro e proteção lateral insuficiente.
+
+Data 2025-08-12 - Etapa 22 (Recuperação estrutural) - Fiscal: Marcos Vinícius Alves
+Resultado: Pendente
+Observação: Recuperação estrutural apresentando pequenos atrasos. Cronograma será revisto.
+
+================================================================================
+
+FILTROS DISPONÍVEIS PARA CONSULTAS
+
+--- Filtros por Status de Etapa ---
+- Pendente
+- Em andamento
+- Concluída
+- Atrasada
+
+--- Filtros por Bairro ---
+- Centro
+- Esperança
+- Industrial
+- Vila Verde
+- Boa Vista
+
+--- Filtros por Resultado de Fiscalização ---
+- Aprovado
+- Reprovado
+- Pendente
+- Em análise
+
+--- Filtros por CPF (Fiscais) ---
+- 444.444.444-44 (Marcos Vinícius Alves)
+- 555.555.555-55 (Juliana Costa)
+- 666.666.666-66 (Rafael Mendes)
+- 777.777.777-77 (Patricia Gomes)
+
+--- Filtros por ID de Obra ---
+- 1 (Reforma da Escola Municipal Sol Nascente)
+- 2 (Construção da UBS Bairro Esperança)
+- 3 (Pavimentação da Avenida do Contorno)
+- 4 (Construção de Praça Pública Vila Verde)
+- 5 (Ampliação do Mercado Público Municipal)
+- 6 (Reforma do Ginásio Poliesportivo Municipal)
+
+================================================================================
+
+FIM DO DOCUMENTO

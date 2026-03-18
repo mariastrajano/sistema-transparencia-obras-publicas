@@ -1,0 +1,146 @@
+
+
+
+STATUS DO SISTEMA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Banco de dados PostgreSQL: OPERACIONAL
+  - Host: localhost:5432
+  - Banco: obras_publicas
+  - Usuário: postgres
+
+✓ Dados carregados: 87 REGISTROS
+  - 6 Obras
+  - 25 Etapas
+  - 8 Usuários
+  - 6 Empresas
+  - 6 Contratos
+  - 21 Fiscalizações
+
+✓ Encoding: UTF-8 (Português com acentos funcionando)
+  - Construção da UBS Bairro Esperança ✓
+  - Pavimentação da Avenida do Contorno ✓
+  - Ampliação do Mercado Público Municipal ✓
+
+
+COMO EXECUTAR A APRESENTAÇÃO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abra Windows Terminal (não PowerShell)
+   - Clique em Windows Terminal na barra de tarefas
+   - OU pressione Win+Shift+T
+
+2. Navegue para a pasta do projeto:
+   cd c:\Users\matheus\sistema-transparencia-obras-publicas
+
+3. Execute a aplicação:
+   python main.py
+
+4. Menu principal aparecerá com 3 opções:
+   1 - Inserir dados (novo obra, etapas, etc)
+   2 - Consultar dados (buscar obras, etapas, etc)
+   3 - Atualizar dados
+   0 - Sair
+
+5. Selecione "2 - Consultar dados" para ver os dados já carregados
+
+
+DADOS DISPONÍVEIS PARA CONSULTA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OBRAS:
+1. Reforma da Escola Municipal Sol Nascente
+2. Construção da UBS Bairro Esperança
+3. Pavimentação da Avenida do Contorno
+4. Construção de Praça Pública Vila Verde
+5. Ampliação do Mercado Público Municipal
+6. Reforma do Ginásio Poliesportivo Municipal
+
+USUÁRIOS CADASTRADOS:
+• Ana Paula Ribeiro (Admin)
+• Carlos Henrique Lima (Admin)
+• Fernanda Rocha (Admin)
+• Marcos Vinicius Alves (Fiscal)
+• Juliana Costa (Fiscal)
+• Rafael Mendes (Fiscal)
+• Patricia Gomes (Fiscal)
+• Eduardo Nunes (Admin)
+
+EMPRESAS CONTRATADAS:
+1. Construtora Horizonte LTDA
+2. Via Urbana Engenharia S/A
+3. Nova Era Infraestrutura LTDA
+4. Pavitec Obras Públicas LTDA
+5. Edifica Brasil Serviços de Engenharia
+6. Construmax Projetos e Execuções LTDA
+
+
+CONFIGURAÇÃO DO SISTEMA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Arquivo: .env (configurações de banco)
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=obras_publicas
+DB_USER=postgres
+DB_PASSWORD=fb7z5flz
+
+Arquivo: sql/seed_novo.sql (dados produção)
+- Contém todos os 87 registros já carregados no banco
+
+Python version: 3.13
+Dependências: psycopg2-binary==2.9.9, python-dotenv==1.0.1
+
+
+QUERIES DISPONÍVEIS NO MENU:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ao selecionar "2 - Consultar dados":
+
+1. Listar obras com contratos
+2. Buscar obra por nome
+3. Listar etapas de uma obra
+4. Fiscalizações por fiscal e período
+5. Obras por status e bairro
+6. Empresas com valor total de contratos
+
+
+DICAS PARA A APRESENTAÇÃO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• Use Windows Terminal para melhor suporte a UTF-8
+  (PowerShell pode ter problemas de encoding)
+
+• Todos os dados estão em português com acentos corretos
+
+• O sistema está pronto para inserção de novos dados
+
+• As queries estão otimizadas para os dados disponíveis
+
+
+SE HOUVER PROBLEMAS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Se o PostgreSQL não conectar:
+   - Verifique se PostgreSQL está rodando:
+     net start PostgreSQL-x64-18
+   
+   - Verifique a senha no .env
+
+2. Se caracteres aparecem errados:
+   - Use Windows Terminal (não PowerShell)
+   - Verifique encoding do terminal: Ctrl+, (settings)
+
+3. Se precisar recarregar os dados:
+   - Execute: python load_new_seed.py
+
+
+SISTEMA TESTADO E APROVADO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Banco de dados conectando sem erros
+✓ Dados carregados com sucesso
+✓ UTF-8 encoding funcionando
+✓ Consultas retornando dados corretos
+✓ Menu interativo respondendo
+✓ Pronto para apresentação

@@ -9,19 +9,43 @@ from db import get_connection
 # Consultas do Abner
 # ---------------------------------------------------------------
 
+def listar_todas_obras():
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    query = """
+    SELECT id_obra, nome, data_inicio, data_fim_prevista, 
+           endereco_rua, endereco_bairro
+    FROM obra
+    ORDER BY id_obra
+    """
+    cursor.execute(query)
+    resultados = cursor.fetchall()
+
+    print("\n=== Todas as Obras ===")
+    for r in resultados:
+        id_obra, nome, data_inicio, data_fim_prevista, rua, bairro = r
+        print(f"\n  ID: {id_obra}")
+        print(f"  Nome: {nome}")
+        print(f"  Data início: {data_inicio}")
+        print(f"  Data fim prevista: {data_fim_prevista}")
+        print(f"  Endereço: {rua}, {bairro}")
+    conn.close()
+
+
 def listar_obras_com_contratos():
     conn = get_connection()
     cursor = conn.cursor()
 
     query = """
-    SELECT o.nome, c.numero_contrato, c.valor
+    SELECT o.nome, c.id_contrato, c.valor_total
     FROM obra o
     JOIN contrato c ON o.id_obra = c.id_obra
     """
     cursor.execute(query)
     resultados = cursor.fetchall()
 
-    print("\n=== Obras com Contratados ===")
+    print("\n=== Obras com Contratos ===")
     for r in resultados:
         print(r)
     conn.close()
@@ -31,7 +55,7 @@ def listar_obras_com_contratos():
 def buscar_obra_por_nome():
     nome = input("Digite o nome da obra: ")
     
-    conn = get_connection
+    conn = get_connection()
     cursor = conn.cursor()
 
     query = """
@@ -50,7 +74,7 @@ def buscar_obra_por_nome():
 def listar_etapas_por_obra():
     id_obra = input("Digite o ID da Obra: ")
 
-    conn = get_connection
+    conn = get_connection()
     cursor = conn.cursor()
 
     query = """

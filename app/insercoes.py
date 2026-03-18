@@ -55,10 +55,11 @@ def inserir_etapa():
         print("\n=== Inserir Nova Etapa ===")
 
         id_obra = input("ID da obra: ")
-        ordem_etapa = input("Ordem da etapa: ")
         nome = input("Nome da etapa: ")
         descricao = input("Descrição: ")
-        status = input("Status (pendente/em_andamento/concluida/atrasada): ")
+        print("\n  Status válidos: pendente | em_andamento | concluida | atrasada")
+        status = input("Status escolhido: ")
+        ordem_etapa = input("Ordem da etapa (número): ")
         data_inicio = input("Data início prevista (YYYY-MM-DD ou vazio): ")
         data_fim = input("Data fim prevista (YYYY-MM-DD ou vazio): ")
 

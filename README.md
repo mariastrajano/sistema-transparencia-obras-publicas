@@ -1,75 +1,163 @@
-# **Sistema de Transparência de Obras Públicas**
+# Sistema de Transparência de Obras Públicas
 
-## **Descrição do Projeto**
-Este projeto tem como objetivo desenvolver um **Sistema de Transparência de Obras Públicas**, permitindo o acompanhamento detalhado de obras realizadas pelo poder público.
+## Visão Geral
 
-O sistema registra informações como:
+O Sistema de Transparência de Obras Públicas é uma aplicação desenvolvida para centralizar e facilitar o acompanhamento de obras executadas pelo poder público. O sistema oferece ferramentas completas para gerenciar informações sobre projetos, contratos, etapas de execução, fiscalização e responsáveis técnicos.
 
-- obras em execução
-- contratos firmados
-- etapas de execução
-- medições realizadas
-- responsáveis técnicos
-- atualizações e evidências da obra (como fotos georreferenciadas)
+A plataforma promove **transparência administrativa**, permitindo que órgãos de controle e a sociedade acompanhem de forma estruturada e auditável o desenvolvimento das obras públicas.
 
-A proposta busca **promover maior transparência na gestão pública**, permitindo **fiscalização mais eficiente, redução de irregularidades e maior participação social** no acompanhamento das obras.
+## Funcionalidades Principais
 
-Este repositório contém a evolução do projeto desenvolvido na disciplina Banco de Dados, seguindo duas etapas:
+### Gestão de Obras
+- Cadastro e acompanhamento de obras públicas
+- Registro de informações detalhadas (localização, cronograma, responsáveis)
+- Divisão de obras em etapas executáveis
+- Acompanhamento de progresso e status
 
-- Trabalho Prático 1 (TP1) – Modelagem e projeto do banco de dados
-- Trabalho Prático 2 (TP2) – Implementação do banco de dados e integração com aplicação
+### Gestão de Contratos
+- Associação de contratos a obras específicas
+- Registro de empresas contratadas
+- Controle de valores e datas de vigência
+- Rastreabilidade completa de contratos
 
-## **Objetivos**
+### Fiscalização
+- Registro de visitas e inspeções de fiscalização
+- Documentação de parecer técnico
+- Associação de evidências (georreferenciamento)
+- Relatórios de conformidade
 
-- Promover transparência no acompanhamento de obras públicas.
-- Registrar dados estruturados sobre contratos, etapas, medições e responsáveis.
-- Criar uma base de dados auditável e rastreável.
-- Aplicar conceitos teóricos de Banco de Dados em um projeto realista.
-- Implementar e integrar um banco de dados relacional com uma aplicação em Python.
+### Controle de Acesso
+- Usuários diferenciados (administradores públicos, fiscais)
+- Vinculação com órgãos de controle
+- Rastreabilidade de ações e modificações
 
-## **Tecnologias Utilizadas**
+## Stack Tecnológico
 
-- **Banco de Dados:** MySQL
-- **Backend:** Python 3.11+
-- **Interface:** CLI (linha de comando)
+| Componente | Tecnologia |
+|-----------|-----------|
+| **Banco de Dados** | PostgreSQL 18 |
+| **Backend/API** | Python 3.13 |
+| **Interface** | CLI (Command Line Interface) |
+| **Encoding** | UTF-8 (suporte completo a português) |
+| **Driver BD** | psycopg2-binary 2.9.9 |
 
-## **Estrutura do Repositório**
+## Estrutura do Projeto
 
 ```
 sistema-transparencia-obras-publicas/
-├── models/
-│   ├── usuario.py
-│   ├── fiscalizacao.py
-│   └── obra.py
+├── app/                          # Aplicação Python
+│   ├── main.py                  # Menu principal interativo
+│   ├── db.py                    # Gerenciamento de conexão
+│   ├── consultas.py             # Queries e relatórios
+│   ├── insercoes.py             # Inserção de dados
+│   └── atualizacoes.py          # Atualizações de registros
 │
-├──  database/
-    └── schema.sql
+├── sql/                          # Banco de dados
+│   ├── schema.sql               # Estrutura (11 tabelas)
+│   └── seed.sql                 # Dados de demonstração (87 registros)
+│
+├── reset_db.py                  # Script para recarregar dados
+├── .env                         # Configuração (credenciais PostgreSQL)
+├── GUIA_DEMONSTRACAO.txt        # Passo a passo para apresentação
+└── README.md                    # Este arquivo
 ```
 
-## **Como Executar o Projeto**
+## Estrutura do Banco de Dados
 
-Pré-requisitos:
+O sistema utiliza 11 tabelas organizadas em domínios bem definidos:
 
+**Órgãos e Usuários:**
+- `ORGAO_CONTROLE` - Órgãos responsáveis pelo acompanhamento
+- `USUARIO` - Usuários do sistema
+- `ADMINISTRADOR_PUBLICO` - Especialização de usuários
+- `FISCAL_OBRA` - Especialização de usuários
+
+**Execução:**
+- `OBRA` - Projetos públicos
+- `ETAPA` - Fases de execução
+- `EMPRESA_CONTRATADA` - Executoras
+- `CONTRATO` - Vínculos comerciais
+- `GERENCIA` - Relação administrador-obra
+
+**Fiscalização:**
+- `FISCALIZACAO` - Visitas e inspeções
+- `AVALIA` - Avaliação de qualidade
+
+## Como Usar
+
+### Pré-requisitos
+
+- PostgreSQL 18 instalado e em execução
+- Python 3.13+
+- Dependências: `pip install -r requirements.txt`
+
+### Instalação Rápida
+
+1. **Clonar o repositório:**
+   ```bash
+   git clone https://github.com/mariastrajano/sistema-transparencia-obras-publicas.git
+   cd sistema-transparencia-obras-publicas
+   ```
+
+2. **Configurar o banco de dados:**
+   - Edite o arquivo `.env` com suas credenciais PostgreSQL
+   - Execute para popular o banco: `python reset_db.py`
+
+3. **Iniciar a aplicação:**
+   ```bash
+   python app/main.py
+   ```
+
+4. **Navegue pelo menu interativo:**
+   - **Opção 1:** Inserir dados (novas obras, etapas, etc)
+   - **Opção 2:** Consultar dados (7 tipos de relatórios)
+   - **Opção 3:** Atualizar dados (status e valores)
+   - **Opção 0:** Sair
+
+### Dados de Demonstração
+
+O sistema vem pré-carregado com dados de exemplo incluindo:
+- 6 obras públicas em andamento
+- 25 etapas de execução
+- 8 usuários (administradores e fiscais)
+- 6 empresas contratadas
+- 21 registros de fiscalização
+
+Para recarregar os dados originais:
+```bash
+python reset_db.py
 ```
-Python 3.11+
-```
 
-Clone o repositório:
+## Recursos Destacados
 
-```
-git clone https://github.com/mariastrajano/sistema-transparencia-obras-publicas.git
-cd sistema-transparencia-obras-publicas
-```
+✅ **Encoding UTF-8 Completo** - Suporte total para português com acentuação
+✅ **Consultas Avançadas** - 7 tipos diferentes de relatórios
+✅ **Integridade Referencial** - Constraints para garantir consistência
+✅ **Rastreabilidade** - Auditoria de todas as operações
+✅ **Interface Amigável** - Menu interativo e intuitivo
 
-Execute o sistema via terminal:
+## Guia de Demonstração
 
-```
-python run.py
-```
+Para uma apresentação completa do sistema, consulte o arquivo **GUIA_DEMONSTRACAO.txt** que contém:
+- Passo a passo detalhado
+- Dados para inserir em exemplos
+- Resultados esperados
+- Tempo estimado: 15-20 minutos
 
-## **Integrantes do Grupo**
+## Contribuidores
 
-- Abner Levi - @abnerlevi
-- Grazielly Bibiano - @graziellybn
-- Maria Antônia - @mariastrajano
-- Matheus Nogueira - @mathsNS
+| Nome | Responsabilidades |
+|------|-------------------|
+| Abner Levi | Arquitetura, Consultas |
+| Grazielly Bibiano | Consultas, Relatórios |
+| Maria Antônia | Inserções, Modelagem |
+| Matheus Nogueira | Atualizações, Integração |
+
+## Licença
+
+Este projeto foi desenvolvido como trabalho acadêmico da disciplina Banco de Dados.
+
+---
+
+**Última atualização:** Março de 2026
+**Status:** ✅ Operacional e pronto para demonstração
