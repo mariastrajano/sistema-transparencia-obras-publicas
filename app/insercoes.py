@@ -90,8 +90,36 @@ def inserir_etapa():
 
     input("\n[Enter para continuar]")
 
-
 def vincular_admin_obra():
-    # TODO: Antônia implementa aqui (tabela GERENCIA — N:N)
-    print("  [TODO] vincular_admin_obra não implementado ainda.")
-    input("  [Enter para continuar]")
+    try:
+        conn = get_connection()
+        cur = conn.cursor()
+
+        print("\n=== Vincular Administrador à Obra ===")
+
+        cpf_admin = input("CPF do administrador: ")
+        id_obra = input("ID da obra: ")
+        data_inicio = input("Data de início da gestão (YYYY-MM-DD): ")
+
+        cur.execute("""
+            INSERT INTO GERENCIA (
+                cpf_administrador, id_obra, data_inicio
+            )
+            VALUES (%s, %s, %s)
+        """, (
+            cpf_admin,
+            id_obra,
+            data_inicio
+        ))
+
+        conn.commit()
+        print("\nAdministrador vinculado à obra com sucesso!")
+
+    except Exception as e:
+        print("\nErro ao vincular administrador:", e)
+
+    finally:
+        cur.close()
+        conn.close()
+
+    input("\n[Enter para continuar]")
