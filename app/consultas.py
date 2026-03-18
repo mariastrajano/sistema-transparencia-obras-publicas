@@ -91,9 +91,60 @@ def fiscalizacoes_por_fiscal_e_periodo():
             conn.close()
 
 
+
+# Essa consulta permite ao usuário filtrar obras com base no status de suas etapas e no
+# bairro onde estão localizadas.
 def obras_por_status_e_bairro():
-    # TODO: Grazy implementa aqui (multi-parâmetro: status da etapa + bairro)
-    print("  [TODO] obras_por_status_e_bairro não implementado ainda.")
+    """Consulta 5: Obras por status da etapa e bairro"""
+    status = input("  Status da etapa (pendente, em_andamento, concluida, atrasada): ").strip()
+    bairro = input("  Bairro da obra: ").strip()
+
+    conn = None
+    try:
+        # Conecta ao banco e executa a consulta parametrizada.
+        conn = get_connection()
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT DISTINCT
+                    o.id_obra,
+                    o.nome,
+                    o.endereco_bairro,
+                    e.nome AS nome_etapa,
+                    e.status
+                FROM OBRA o
+                JOIN ETAPA e ON e.id_obra = o.id_obra
+                WHERE e.status = %s
+                  AND LOWER(o.endereco_bairro) = LOWER(%s)
+                ORDER BY o.nome, e.nome
+                """,
+                (status, bairro),
+            )
+            resultados = cur.fetchall()
+
+        print("\n  Obras encontradas:")
+
+        if not resultados:
+            # Se não houver resultados, informa o usuário.
+            print("  Nenhuma obra encontrada para os filtros informados.")
+            return
+
+        for item in resultados:
+            # Exibe os resultados de forma legível.
+            id_obra, nome_obra, endereco_bairro, nome_etapa, status_etapa = item
+            print(f"  ID da obra: {id_obra}")
+            print(f"    Nome: {nome_obra}")
+            print(f"    Bairro: {endereco_bairro or 'N/A'}")
+            print(f"    Etapa: {nome_etapa}")
+            print(f"    Status da etapa: {status_etapa}")
+    except Exception as e:
+        # Em caso de erro, exibe a mensagem:
+        print(f"\n  [ERRO] Não foi possível executar a consulta: {e}")
+
+    finally:
+        # Garante que a conexão seja fechada, mesmo em caso de erro.
+        if conn is not None:
+            conn.close()
 
 
 def empresas_com_valor_total():
