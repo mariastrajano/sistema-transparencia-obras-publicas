@@ -31,7 +31,7 @@ A plataforma promove **transparência administrativa**, permitindo que órgãos 
 - Vinculação com órgãos de controle
 - Rastreabilidade de ações e modificações
 
-## Stack Tecnológico
+## Tecnologias utilizadas
 
 | Componente | Tecnologia |
 |-----------|-----------|
@@ -128,22 +128,6 @@ Para recarregar os dados originais:
 python reset_db.py
 ```
 
-## Recursos Destacados
-
-✅ **Encoding UTF-8 Completo** - Suporte total para português com acentuação
-✅ **Consultas Avançadas** - 7 tipos diferentes de relatórios
-✅ **Integridade Referencial** - Constraints para garantir consistência
-✅ **Rastreabilidade** - Auditoria de todas as operações
-✅ **Interface Amigável** - Menu interativo e intuitivo
-
-## Guia de Demonstração
-
-Para uma apresentação completa do sistema, consulte o arquivo **GUIA_DEMONSTRACAO.txt** que contém:
-- Passo a passo detalhado
-- Dados para inserir em exemplos
-- Resultados esperados
-- Tempo estimado: 15-20 minutos
-
 ## Contribuidores
 
 | Nome | Responsabilidades |
@@ -152,12 +136,3 @@ Para uma apresentação completa do sistema, consulte o arquivo **GUIA_DEMONSTRA
 | Grazielly Bibiano | Consultas, Relatórios |
 | Maria Antônia | Inserções, Modelagem |
 | Matheus Nogueira | Atualizações, Integração |
-
-## Licença
-
-Este projeto foi desenvolvido como trabalho acadêmico da disciplina Banco de Dados.
-
----
-
-**Última atualização:** Março de 2026
-**Status:** ✅ Operacional e pronto para demonstração
