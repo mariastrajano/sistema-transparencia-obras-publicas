@@ -147,6 +147,50 @@ def obras_por_status_e_bairro():
             conn.close()
 
 
+
+# Essa consulta lista todas as empresas contratadas, mostrando o número de contratos 
+# e o valor total contratado para cada empresa.
 def empresas_com_valor_total():
-    # TODO: Grazy implementa aqui
-    print("  [TODO] empresas_com_valor_total não implementado ainda.")
+    """Consulta 6: Empresas contratadas e valor total contratado."""
+    conn = None
+    try:
+        # Conecta ao banco e executa a consulta agregada das empresas.
+        conn = get_connection()
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT
+                    ec.cnpj,
+                    ec.nome,
+                    COUNT(c.id_contrato) AS quantidade_contratos,
+                    COALESCE(SUM(c.valor_total), 0) AS valor_total_contratado
+                FROM EMPRESA_CONTRATADA ec
+                LEFT JOIN CONTRATO c ON c.cnpj = ec.cnpj
+                GROUP BY ec.cnpj, ec.nome
+                ORDER BY valor_total_contratado DESC, ec.nome
+                """
+            )
+            resultados = cur.fetchall()
+
+        print("\n  Empresas contratadas e valor total:")
+
+        if not resultados:
+            # Se não houver resultados, informa o usuário.
+            print("  Nenhuma empresa encontrada.")
+            return
+
+        for item in resultados:
+            # Exibe os resultados de forma legível.
+            cnpj, nome_empresa, quantidade_contratos, valor_total = item
+            print(f"  CNPJ: {cnpj}")
+            print(f"    Empresa: {nome_empresa}")
+            print(f"    Contratos: {quantidade_contratos}")
+            print(f"    Valor total contratado: R$ {valor_total:.2f}")
+    except Exception as e:
+        # Em caso de erro, exibe a mensagem:
+        print(f"\n  [ERRO] Não foi possível executar a consulta: {e}")
+
+    finally:
+        # Garante que a conexão seja fechada, mesmo em caso de erro.
+        if conn is not None:
+            conn.close()
